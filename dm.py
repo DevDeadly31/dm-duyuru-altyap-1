@@ -56,13 +56,13 @@ async def dm_duyuru(interaction: discord.Interaction, mesaj: str):
             ephemeral=True
         )
     
-    await interaction.response.send_message("📨 **Tüm üyelere** DM gönderimi başlatılıyor...", ephemeral=False)
+    await interaction.response.send_message("**Tüm üyelere** DM gönderimi başlatılıyor...", ephemeral=False)
     
     target_members = [m for m in interaction.guild.members if not m.bot]
     total = len(target_members)
     
     if total == 0:
-        return await interaction.followup.send("⚠️ Gönderilecek üye bulunamadı.")
+        return await interaction.followup.send(" Gönderilecek üye bulunamadı.")
     
     success = 0
     fail = 0
